@@ -25,17 +25,30 @@ enum charybdis_keymap_layers {
 #define LOWER MO(LAYER_LOWER)
 #define RAISE MO(LAYER_RAISE)
 
+// Left-hand home row mods
+#define HOME_A LCTL_T(KC_A)
+#define HOME_O LALT_T(KC_O)
+#define HOME_E LGUI_T(KC_E)
+#define HOME_U LSFT_T(KC_U)
+
+// Right-hand home row mods
+#define HOME_H RSFT_T(KC_H)
+#define HOME_T RGUI_T(KC_T)
+#define HOME_N LALT_T(KC_N)
+#define HOME_S RCTL_T(KC_S)
+
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT_charybdis_4x6(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
         KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_MINS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-        KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
+       KC_ESC,  KC_QUOT,   KC_COMM,  KC_DOT,  KC_P,    KC_Y,       KC_F,    KC_G,    KC_C,    KC_R,    KC_L, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+       KC_BSPC,   HOME_A,   HOME_O,  HOME_E, HOME_U,   KC_I,       KC_D,   HOME_H,  HOME_T,  HOME_N,  HOME_S, KC_MINS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LALT,
+       KC_TAB,  KC_SCLN,   KC_Q,    KC_J,    KC_K,    KC_X,        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, KC_PEQL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                    KC_LGUI, KC_SPC,   LOWER,      RAISE,  KC_ENT,
                                            KC_LALT, KC_BSPC,     KC_DEL
